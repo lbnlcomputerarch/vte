@@ -45,7 +45,7 @@ object copyVerilatorHeaderFiles {
     }
 
     val rootDirPath = new File(".").getAbsolutePath()
-    
+
     val bitsHFilePathSrc = Paths.get(rootDirPath + "/vte/src/main/cpp" + "/bits.h")
     val bitsCppFilePathSrc = Paths.get(rootDirPath + "/vte/src/main/cpp" + "/bits.cpp")
     val testbenchHFilePathSrc = Paths.get(rootDirPath + "/vte/src/main/cpp" + "/testbench.h")
@@ -72,7 +72,7 @@ object setupVerilatorBackend {
     val topModule = dutFile
 
     val blackBoxVerilogList = {
-      val list_file = new File(dir, firrtl.transforms.BlackBoxSourceHelper.FileListName)
+      val list_file = new File(dir, firrtl.transforms.BlackBoxSourceHelper.fileListName)
       if (list_file.exists()) {
         Seq("-f", list_file.getAbsolutePath)
       }
